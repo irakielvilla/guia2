@@ -12,11 +12,11 @@ const posicionActual = secuenciaPasos.indexOf(miejercicio.id);
 
 // Calculamos los IDs hermanos de forma segura para no desbordar el array
 const idAnterior = posicionActual > 0 ? secuenciaPasos[posicionActual - 1] : secuenciaPasos[0];
-const idSiguiente = posicionActual < secuenciaPasos.length - 1 ? secuenciaPasos[posicionActual + 1] : secuenciaPasos[secuenciaPasos.length - 1];
+const idSiguiente = posicionActual < secuenciaPasos.length - 1 ? secuenciaPasos[posicionActual + 1] : undefined;
 
 // 🚀 RUTAS OFICIALES CONECTADAS DE FORMA EXACTA
 const arribaUrl = `/a-partida/puntoa/${idAnterior}`;
-const abajoUrl = `/a-partida/puntoa/${idSiguiente}`;
+const abajoUrl = idSiguiente ? `/a-partida/puntoa/${idSiguiente}` : undefined;
 
 // 🧠 FILTRO DINÁMICO DE PÁGINAS DEL CARRUSEL (Texto + Imagen)
 const pagKeys = Object.keys(miejercicio)
@@ -30,7 +30,7 @@ const pagKeys = Object.keys(miejercicio)
 const paginas = pagKeys.map(key => {
   const num = key.replace('pag', '');
   return {
-    texto: miejercicio[key],
+    texto1: miejercicio[key],
     imagen: miejercicio[`imgpag${num}`] || `/puntoa/${miejercicio.id}img${num}.svg`
   };
 });
@@ -62,7 +62,7 @@ const paginas = pagKeys.map(key => {
     <div class="swiper-wrapper">
       {paginas.map((pag, index) => (
         <div class="swiper-slide" data-slide-image={pag.imagen}>
-          <p class="fredoka-texto" set:html={pag.texto}></p>
+          <img src={pag.texto1}>
         </div>
       ))}
     </div>
@@ -76,7 +76,7 @@ const paginas = pagKeys.map(key => {
     <img class="arribab" src="/puntoa/arriba.svg" alt="Arriba">
     <img class="fondob" src="/puntoa/fondoarriba.svg" alt="Fondo">
   </a>
-  <a id="abajo" class="navegador-btn" href={abajoUrl} title="Ir al paso siguiente">
+  <a id="abajo" class:list={['navegador-btn', !idSiguiente && 'is-disabled']} href={abajoUrl} title="Ir al paso siguiente">
     <img class="abajob" src="/puntoa/abajo.svg" alt="Abajo">
     <img class="fondobajo" src="/puntoa/fondoabajo.svg" alt="Fondo">
   </a>
@@ -173,14 +173,13 @@ const paginas = pagKeys.map(key => {
     background-color: #E0B812;
     z-index: 5;
     border-radius: 0px 54px 54px 0px;
-    margin: 15% 13% 15% 15%;
+margin: 15% 13% 15% 14.8%;  /*cambiar el 14.8 en todos*/
     border-top: 5.9px solid #AA8B0B;
     border-right: 5.9px solid #AA8B0B;
     border-bottom: 5.9px solid #AA8B0B;
     display: flex;
     align-items: center;
     justify-content: center;
-    pa
     box-sizing: border-box;
   }
 
@@ -263,6 +262,7 @@ const paginas = pagKeys.map(key => {
     z-index: 6;
     width: 77%;
     transition: calc(0.2s); //Agrega una transición suave para el efecto hover
+
   }
   // Efecto hover para hacer que la flecha crezca un poco al pasar el mouse
   .arribab:hover {
@@ -277,6 +277,15 @@ const paginas = pagKeys.map(key => {
     position: absolute;
     z-index: 6;
     width: 60%;
+  }
+
+  .is-disabled {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .is-disabled .abajob {
+    opacity: 0.3;
   }
 </style>
 

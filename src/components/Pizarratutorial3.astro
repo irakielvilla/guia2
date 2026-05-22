@@ -62,7 +62,7 @@ const paginas = pagKeys.map(key => {
     <div class="swiper-wrapper">
       {paginas.map((pag, index) => (
         <div class="swiper-slide" data-slide-image={pag.imagen}>
-          <p class="fredoka-texto" set:html={pag.texto}></p>
+          <img src={pag.texto} alt="">
         </div>
       ))}
     </div>

@@ -27,9 +27,24 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
 
         <Pizarratutorial1 miejercicio={miejercicio} />
 
+        <div class="personaje">
+            <img src="/personajes/la1.svg" alt="">
+        </div>  
+
     </div>
 
     <style>
+        .personaje {
+            grid-column: 25/31;
+            grid-row: 6/15;
+            width: 100%;
+            z-index: 5;
+            padding-right: 5%;
+        }
+        .personaje img {
+            width: 100%;
+            height: 100%;
+        }
         #ContenedorPrin {
             display: grid;
             width: 1400px;

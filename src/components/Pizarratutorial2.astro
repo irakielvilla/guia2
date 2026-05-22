@@ -11,16 +11,15 @@ const secuenciaPasos = ["puntoa-a", "paso1", "paso2", "paso3", "paso4"];
 const posicionActual = secuenciaPasos.indexOf(miejercicio.id);
 
 // Calculamos los IDs hermanos de forma segura para no desbordar el array
-const idAnterior = posicionActual > 0 ? secuenciaPasos[posicionActual - 1] : secuenciaPasos[0];
+const idAnterior = posicionActual > 0 ? secuenciaPasos[posicionActual - 1] : undefined; // Desactiva si es el primer paso
 const idSiguiente = posicionActual < secuenciaPasos.length - 1 ? secuenciaPasos[posicionActual + 1] : secuenciaPasos[secuenciaPasos.length - 1];
 
 // 🚀 RUTAS OFICIALES CONECTADAS DE FORMA EXACTA
-const arribaUrl = `/a-partida/puntoa/${idAnterior}`;
+const arribaUrl = idAnterior ? `/a-partida/puntoa/${idAnterior}` : undefined; // URL solo si no es el primer paso
 const abajoUrl = `/a-partida/puntoa/${idSiguiente}`;
 
 // 🧠 FILTRO DINÁMICO DE PÁGINAS DEL CARRUSEL (Texto + Imagen)
-const pagKeys = Object.keys(miejercicio)
-  .filter(key => key.startsWith('pag'))
+const pagKeys = Object.keys(miejercicio).filter(key => key.startsWith('pag'))
   .sort((a, b) => {
     const numA = parseInt(a.replace('pag', ''), 10);
     const numB = parseInt(b.replace('pag', ''), 10);
@@ -28,10 +27,8 @@ const pagKeys = Object.keys(miejercicio)
   });
 
 const paginas = pagKeys.map(key => {
-  const num = key.replace('pag', '');
   return {
-    texto: miejercicio[key],
-    imagen: miejercicio[`imgpag${num}`] || `/puntoa/${miejercicio.id}img${num}.svg`
+    src: miejercicio[key], // Asumimos que pagX ahora contiene la ruta de la imagen
   };
 });
 ---
@@ -53,7 +50,7 @@ const paginas = pagKeys.map(key => {
 
 <div id="contenedor-info">
   {paginas[0] && (
-    <img id="img-tutorial-dinamica" src={paginas[0].imagen} alt="Material Inicial" />
+    <img id="img-tutorial-dinamica" src={paginas[0].src} alt="Material Inicial" />
   )}
 </div>
 
@@ -61,8 +58,8 @@ const paginas = pagKeys.map(key => {
   <div class="swiper mySwiperTutorial">
     <div class="swiper-wrapper">
       {paginas.map((pag, index) => (
-        <div class="swiper-slide" data-slide-image={pag.imagen}>
-          <p class="fredoka-texto" set:html={pag.texto}></p>
+        <div class="swiper-slide" data-slide-image={pag.src}>
+          <img src={pag.src} alt={`Instrucción ${index + 1}`} class="img-tutorial-carrusel">
         </div>
       ))}
     </div>
@@ -70,9 +67,8 @@ const paginas = pagKeys.map(key => {
     <div class="swiper-pagination"></div>
   </div>
 </div>
-
 <div id="navegadorpasos">
-  <a id="arriba" class="navegador-btn" href={arribaUrl} title="Ir al paso anterior">
+  <a id="arriba" class:list={['navegador-btn', posicionActual === 0 && 'is-disabled']} href={arribaUrl} title="Ir al paso anterior">
     <img class="arribab" src="/puntoa/arriba2.svg" alt="Arriba">
     <img class="fondob" src="/puntoa/fondoarriba2.svg" alt="Fondo">
   </a>
@@ -223,6 +219,7 @@ const paginas = pagKeys.map(key => {
   }
 
   .swiper-pagination {
+    top: 85% !important;
     bottom: 17% !important;
     left: 50% !important;
     transform: translateX(-54.4%) !important;
@@ -262,7 +259,8 @@ const paginas = pagKeys.map(key => {
     position: absolute;
     z-index: 6;
     width: 77%;
-    transition: calc(0.2s); //Agrega una transición suave para el efecto hover
+    transition: calc(0.2s);
+    opacity: 0.3;
   }
   // Efecto hover para hacer que la flecha crezca un poco al pasar el mouse
   .arribab:hover {
@@ -301,7 +299,7 @@ const paginas = pagKeys.map(key => {
         init: function () {
           const slideInicial = this.slides[this.activeIndex];
           if (slideInicial) {
-            const rutaImg = slideInicial.getAttribute("data-slide-image");
+            const rutaImg = slideInicial.getAttribute("data-slide-image"); // Usará pag.src
             if (rutaImg) imgDinamica.src = rutaImg;
           }
         },
@@ -309,7 +307,7 @@ const paginas = pagKeys.map(key => {
           const slideActivo = this.slides[this.activeIndex];
           
           if (slideActivo) {
-            const nuevaRuta = slideActivo.getAttribute("data-slide-image");
+            const nuevaRuta = slideActivo.getAttribute("data-slide-image"); // Usará pag.src
             
             if (nuevaRuta) {
               imgDinamica.style.opacity = "0.1";
