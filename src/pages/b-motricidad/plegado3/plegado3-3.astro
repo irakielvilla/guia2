@@ -46,9 +46,28 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
                 ><img class="ejers" src={miejercicio.bdere4} alt="" />
             </a>
         </div>
+        <div class="personaje">
+            <img src="/personajes/l24.svg" alt="">  
+        </div>  
     </div>
 
     <style>
+
+        .personaje {
+            grid-column: 12/15;
+            grid-row: 1/6;
+            width: 100%;
+            z-index: 5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 29%;
+            padding-left: 34%;
+        }
+        .personaje img {
+            object-fit: contain;
+            height: 100%;
+        }
         #ContenedorPrin {
             display: grid;
             width: 1400px;

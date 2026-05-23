@@ -43,29 +43,27 @@ const numeroActual = miejercicio.id.slice(-1);
         
         <MenuDerechoNumeros currentNumber={numeroActual}/>
 
-        <!-- <div id="bbarraderecha">
-            <a href="/c-grafomotriz/numeros/numeros3-0/"><img class="ejers" src={miejercicio.bdere1} alt="" />
-                    </a>
-
-            <a href="/c-grafomotriz/numeros/numeros3-1/"
-                ><img class="ejers" src={miejercicio.bdere2} alt="" />
-            </a>
-
-            <a href="/c-grafomotriz/numeros/numeros3-2/"
-                ><img class="ejers" src={miejercicio.bdere3} alt="" />
-            </a>
-
-            <a href="/c-grafomotriz/numeros/numeros3-3/"
-                ><img class="ejers" src={miejercicio.bdere4} alt="" />
-            </a>
-
-            <a href="/c-grafomotriz/numeros/numeros3-4/"
-                ><img class="ejers" src={miejercicio.bdere5} alt="" />
-            </a>
-        </div> -->
+        <div class="personaje">
+            <img src="/personajes/l24.svg" alt="">  
+        </div>  
     </div>
 
     <style>
+        .personaje {
+            grid-column: 12/15;
+            grid-row: 1/6;
+            width: 100%;
+            z-index: 5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 29%;
+            padding-left: 34%;
+        }
+        .personaje img {
+            object-fit: contain;
+            height: 100%;
+        }
         #ContenedorPrin {
             display: grid;
             width: 1400px;
