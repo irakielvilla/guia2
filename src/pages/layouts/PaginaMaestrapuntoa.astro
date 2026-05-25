@@ -1,5 +1,5 @@
 ---
-
+import AlertaVertical from "../../components/AlertaVertical.astro"
 ---
 <html lang="es">
 	<head>
@@ -12,8 +12,7 @@
 	</head>
 	<body>
     <body>
-    <div id="landscape-warning" class="landscape-warning">
-        </div>
+    <AlertaVertical />
 
     <div class="super-contenedor">
         
@@ -32,7 +31,7 @@
        lo haga hacia su propio centro, no hacia el techo */
     transform-origin: center center;
     
-    overflow: hidden; 
+    overflow: visible; 
 }
 
 /* =========================================
@@ -55,6 +54,9 @@
     :root { --zoom-factor-reduccion: calc(100vw / 1400px); }
     .super-contenedor {
         transform: scale(var(--zoom-factor-reduccion));
+        transform-origin: center center;
+        margin: 0 0 0 0;
+        overflow: visible;
     }
 }
 
@@ -63,6 +65,9 @@
     :root { --zoom-factor-alto: calc(100vh / 650px); }
     .super-contenedor {
         transform: scale(var(--zoom-factor-alto));
+        transform-origin: center center;
+        margin: 0 0 0 0;
+        overflow: visible;
     }
 }
  

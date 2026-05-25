@@ -1,0 +1,103 @@
+---
+// AlertaVertical.astro
+// Pantalla de bloqueo que fuerza el uso en modo horizontal (apaisado)
+---
+
+<div id="landscape-warning" class="landscape-warning">
+    <div class="warning-content">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-rotate">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <path d="M12 18h.01"></path>
+            <path d="M4 12a8 8 0 0 1 14.93-3.7"></path>
+            <polygon points="15 8 19 8 19 4"></polygon>
+        </svg>
+        
+        <h2>¡Ups! Gira tu pantalla</h2>
+        <p>Esta guía interactiva funciona mucho mejor horizontalmente.</p>
+        
+        <div class="hint-box">
+            <p>💡 <strong>¿No gira?</strong> Recuerda activar la opción de <strong>rotación automática</strong> en tu dispositivo.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* =========================================
+       ESTILOS BASE (Oculto en PC y formato apaisado)
+       ========================================= */
+    .landscape-warning {
+        display: none; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #ffffff; /* Fondo blanco sólido para tapar todo */
+        z-index: 999999; /* Máxima prioridad por encima del super-contenedor */
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        font-family: 'Fredoka', sans-serif;
+    }
+
+    .warning-content { 
+        padding: 2rem; 
+        max-width: 90vw; 
+    }
+    
+    .warning-content h2 { 
+        font-size: 2.2rem; 
+        color: #333; 
+        margin-bottom: 0.5rem; 
+    }
+    
+    .warning-content p { 
+        font-size: 1.2rem; 
+        color: #555; 
+        margin-bottom: 2rem; 
+    }
+    
+    .hint-box {
+        background-color: #fff3cd;
+        border: 2px dashed #ffe69c;
+        padding: 1rem;
+        border-radius: 12px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .hint-box p { 
+        margin: 0; 
+        font-size: 1rem; 
+        color: #664d03; 
+    }
+
+    /* =========================================
+       ANIMACIÓN DEL SVG
+       ========================================= */
+    .icon-rotate {
+        width: 120px;
+        height: 120px;
+        color: #007bff; /* Color azul llamativo */
+        margin-bottom: 1rem;
+        animation: rotarCelular 2.5s ease-in-out infinite;
+    }
+
+    @keyframes rotarCelular {
+        0% { transform: rotate(0deg); }
+        40% { transform: rotate(-90deg); }
+        80% { transform: rotate(-90deg); } /* Pausa para que el usuario entienda */
+        100% { transform: rotate(0deg); }
+    }
+
+    /* =========================================
+       EL DETONADOR (Media Query Vertical)
+       ========================================= */
+    @media screen and (orientation: portrait) {
+        .landscape-warning {
+            /* Cuando está vertical, forzamos a que aparezca con display: flex */
+            display: flex; 
+        }
+    }
+</style>

@@ -1,5 +1,5 @@
 ---
-
+import AlertaVertical from "../../components/AlertaVertical.astro"
 ---
 <html lang="es">
 	<head>
@@ -11,14 +11,64 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<slot>
+		<AlertaVertical />
 
-        </slot>
+    <div class="super-contenedor">
+        
+        <slot />
+
+    </div>
 	</body>
 </html>
 
 
-<style is:global>
+<style>
+  .super-contenedor {
+    width: 1400px;
+    /* 2. ¡CAMBIAMOS LA CHINCHETA! */
+    /* Como el body ya lo está centrando, necesitamos que al achicarse 
+       lo haga hacia su propio centro, no hacia el techo */
+    transform-origin: center center;
+    
+    overflow: hidden; 
+}
+
+/* =========================================
+   2. TUS REGLAS DE ZOOM (Responsive)
+   ========================================= */
+
+/* Para pantallas GIGANTES (hace Zoom In) */
+@media screen and (min-width: 1400px) {
+    :root { --zoom-factor: calc(100vw / 1400px); }
+    .super-contenedor {
+        transform: scale(var(--zoom-factor));
+        transform-origin: center center;
+        margin: 0 0 0 0;
+        overflow: visible;
+    }
+}
+
+/* Para pantallas PEQUEÑAS (hace Zoom Out) */
+@media screen and (max-width: 1399px) {
+    :root { --zoom-factor-reduccion: calc(100vw / 1400px); }
+    .super-contenedor {
+        transform: scale(var(--zoom-factor-reduccion));
+        transform-origin: center center;
+        margin: 0 0 0 0;
+        overflow: visible;
+    }
+}
+
+/* Para pantallas BAJITAS (ajusta por el alto) */
+@media screen and (max-height: 650px) {
+    :root { --zoom-factor-alto: calc(100vh / 650px); }
+    .super-contenedor {
+        transform: scale(var(--zoom-factor-alto));
+        transform-origin: center center;
+        margin: 0 0 0 0;
+        overflow: visible;
+    }
+}
   /* --- FUENTE COINY --- */
   @font-face {
     font-family: 'Coiny';
