@@ -12,12 +12,62 @@
 	</head>
 	<body>
 		<slot>
+      <div id="landscape-warning" class="landscape-warning">
+    <div class="warning-content">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-rotate">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <path d="M12 18h.01"></path>
+            <path d="M4 12a8 8 0 0 1 14.93-3.7"></path>
+            <polygon points="15 8 19 8 19 4"></polygon>
+        </svg>
+        
+        <h2>¡Ups! Gira tu pantalla</h2>
+        <p>Esta plataforma mágica funciona mucho mejor en formato horizontal.</p>
+        
+        <div class="hint-box">
+            <p>💡 <strong>¿No gira?</strong> Recuerda activar la opción de <strong>rotación automática</strong> en tu dispositivo.</p>
+        </div>
+    </div>
+      </div>
 
-        </slot>
+    </slot>
 	</body>
 </html>
 
 <style is:global>
+    /* =========================================
+       2. TUS REGLAS DE ZOOM (Responsive)
+       ========================================= */
+    @media screen and (min-width: 1400px) {
+        :root { --zoom-factor: calc(100vw / 1400px); }
+        body {
+            transform: scale(var(--zoom-factor));
+            transform-origin: top center;
+            overflow-x: hidden;
+            justify-content: flex-start;
+        }
+    }
+    @media screen and (max-width: 1400px) {
+        :root { --zoom-factor: calc(100vw / 1400px); }
+        body {
+            transform: scale(var(--zoom-factor));
+            transform-origin: top center;
+            overflow-x: hidden;
+            justify-content: flex-start;
+        }
+    }
+
+
+    @media screen and (max-height: 650px) {
+        :root { --zoom-factor-alto: calc(100vh / 650px); }
+        body {
+            transform: scale(var(--zoom-factor-alto));
+            transform-origin: top center;
+            overflow-x: hidden;
+            justify-content: flex-start;
+        }
+    }
+ 
   /* --- FUENTE COINY --- */
   @font-face {
     font-family: 'Coiny';
@@ -76,8 +126,9 @@
     /* --- CONFIGURACIÓN DEL CENTRADO DEL CONTENEDOR --- */
     display: flex;
     justify-content: center; /* Centrado horizontal */
-    align-items: center;     /* Centrado vertical */
-    min-height: 100vh;       /* Asegura que el body ocupe todo el alto de la pantalla del navegador */
+    align-items: flex-start;     /* Centrado vertical */
+    min-height: 100vh;
+    margin-top: 1%;       /* Asegura que el body ocupe todo el alto de la pantalla del navegador */
     
     /* --- COMPORTAMIENTO DE SCROLL --- */
     /* Si la ventana del navegador es más pequeña que 1400x650px, aparecerán barras de scroll */
