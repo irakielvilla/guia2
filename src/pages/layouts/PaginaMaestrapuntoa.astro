@@ -66,7 +66,6 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
     .super-contenedor {
         transform: scale(var(--zoom-factor-alto));
         transform-origin: center top;
-        margin: 0;
         overflow: visible;
         min-height: 100dvh; /* 'dvh' es 'dynamic viewport height', especial para Safari móvil */
     }
@@ -132,7 +131,6 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
     justify-content: center; /* Centrado horizontal */
     align-items: center;     /* Centrado vertical */
     min-height: 100dvh;
-    margin-top: 0;       /* Asegura que el body ocupe todo el alto de la pantalla del navegador */
     
     /* --- COMPORTAMIENTO DE SCROLL --- */
     /* Si la ventana del navegador es más pequeña que 1400x650px, aparecerán barras de scroll */
