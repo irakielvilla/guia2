@@ -44,7 +44,6 @@ if (!miejercicio) {
       autoplay
       muted
       playsinline
-      controls
     >
     </video>
     <div id="bordeazul"></div>
@@ -83,9 +82,14 @@ if (!miejercicio) {
   }
 
   video {
-    overflow: hidden;
-    object-fit: fill;
-    height: 140%;
+      overflow: hidden;
+    height: 101%;
+    width: 101%;
+    /* LA CLAVE: Evita que Flexbox lo aplaste hacia adentro */
+  flex-shrink: 0; 
+  
+  /* Mantiene la proporción sin deformar la imagen y recorta el exceso (ideal si el video trae bandas negras de origen) */
+  object-fit: cover;
   }
 
   #contenedor-info {
@@ -95,14 +99,14 @@ if (!miejercicio) {
     z-index: 5;
     padding-top: 40px;
     border-radius: 0px 54px 54px 0px;
-    margin: 15% 13% 15% 15%;
+    margin: 15% 13% 15% 14.8%;
     border-top: 5.9px solid #910F0F;
     border-right: 5.9px solid #910F0F;
     border-bottom: 5.9px solid #910F0F;
   }
   #contenedor-info p {
     font-family: "Fredoka", sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     color: #ffffff;
     text-align: center;
     padding-left: 12%;
