@@ -10,21 +10,20 @@
 
 <body>
     <div id="ContenedorPrin"> 
-        <div class="pizarrap">
-            <img src="/portada/pizarrap.svg" alt="Pizarra">
+
+        <div class="personajes">
+            <img src="/portada/nivel2.svg">
+            <img src="/portada/nivel3.svg">
         </div>
-            
-            <div class="botonp">
-                 <a class="botonpa" href="/indice">
-                    <img class="botonpimg" src="/portada/botonp.png" alt="Botón de Inicio">
-                </a>
-            </div>
-        <div class="personaje">
-           <img src="/portada/lp.svg" alt="Personaje">
+        <div class="pizarrafinal">
+            <img src="/portada/pizarracp.svg" alt="Pizarra Final">
         </div>
-        <div class="deco">
-            <img src="/portada/decop.svg">
+
+        <div class="creditos">
+            <img src="/portada/creditos.svg" alt="creditos">
         </div>
+        
+    
   </div>
 
 </body>
@@ -32,84 +31,53 @@
 
 
 <style>
-    button {
-background: transparent;
-border: none;
-padding: 0;
-margin: 0;
-font: inherit;
-color: inherit;
-cursor: pointer;
-outline: none;
-}
-    .deco img {
-        width: 150%;
-        right: 12%;
-
+    .personajes img {
+        height: 80%;
+        width: auto;
         position: relative;
     }
-    .deco {
-        overflow: visible;
-        display: flex;
-        justify-content: flex-end;
-        grid-column: 1/20;
-        grid-row: 6/12;
-        width: 120%;
-        height: 100%;
-        z-index: 1;
-
-    }
-    .personaje img {
-
-        height: 96%;
-        padding-right: 8%;
-        padding-top: 1%;
-        object-fit: fill;
-
-
-    }
-    .personaje {
+    .personajes {
         
-        grid-column: 2/9;
-        grid-row: 5/13;
-        width: 100%;
+        grid-column: 14 /  21; 
+        grid-row: 9 /  14;
         display: flex;
-        z-index: 3;
-        justify-content: flex-end;
+        justify-content: space-between;
+        align-items: flex-start;
+        z-index: 5;
+        padding-right: 6.5%;
     }
-    .botonpa {
+    .creditos img {
+        height: 100%;
         position: relative;
-        display: inline-block;
-        width: fit-content;
-    }
-    .botonpimg {
-        width: 70%;
-        position: relative;
-        padding-left: 4%;
-        padding-bottom: 6%;
+        left: 2%;
 
     }
-    .botonp {
-        margin-right: 20%;
+    .creditos {
+        grid-column: 22 /  31; 
+        grid-row: 2 /  14;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .pizarrafinal img {
+       height: 101%;
+       padding-bottom: 3.2%;
+       position: relative;
+         left: -2.5%;
+    }
+    .pizarrafinal {
+        display: flex;
+        grid-column: 2 /  22; /* Ocupa las 30 columnas */
+        grid-row: 1 /  15;    /* Ocupa las 14 filas */
+        width: 100%;
+        height: 100%;
+        justify-content: flex-start;
         align-items: center;
-        grid-column: 18/23;
-        grid-row: 9/12;
-        width: 100%;
-        height: 100%;
-        z-index: 10 !important;
     }
-    .pizarrap {
-        grid-column: 9/31;
-        grid-row: 2/11;
-        width: 100%;
-        height: 100%;
-        z-index: 3;
-    }
+       
     body {
 
-    background-color: #0059ff;
+    background-color: #d1d1d1;
     margin: 0;
     padding: 0;
     /* --- CONFIGURACIÓN DE LA IMAGEN DE FONDO --- */
