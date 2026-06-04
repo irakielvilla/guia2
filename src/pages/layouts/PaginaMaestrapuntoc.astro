@@ -145,3 +145,38 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
   
 
 </style>
+
+<script>
+      // 1. Efecto Fade-IN al cargar
+      window.addEventListener('load', () => {
+        document.body.classList.add('todo-cargado');
+      });
+
+      // 2. Efecto Fade-OUT súper robusto (HTML + SVG)
+      document.addEventListener('click', (evento) => {
+        const enlace = evento.target.closest('a');
+
+        if (!enlace) return;
+
+        // EXTRACCIÓN SEGURA: Leemos el atributo crudo (funciona igual en <a> de HTML y <a> de SVG)
+        const ruta = enlace.getAttribute('href') || enlace.getAttribute('xlink:href');
+        
+        // Si por alguna razón el enlace está vacío o es un ancla interna (#), no hacemos nada
+        if (!ruta || ruta.startsWith('#')) return;
+
+        // Convertimos la ruta en un objeto URL real basado en la dirección actual de tu página
+        const urlDestino = new URL(ruta, window.location.href);
+
+        // Validaciones: no secuestrar si tiene target="_blank" o si va a otra página web distinta
+        if (enlace.getAttribute('target') === '_blank' || urlDestino.host !== window.location.host) return;
+
+        // ¡Secuestramos el clic con éxito!
+        evento.preventDefault();
+        
+        document.body.classList.remove('todo-cargado');
+
+        setTimeout(() => {
+          window.location.href = urlDestino.href; // Usamos la URL limpia
+        }, 500); // 400ms de la animación
+      });
+  </script>
