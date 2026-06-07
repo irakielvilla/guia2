@@ -117,6 +117,10 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
     margin: 0;
     padding: 0;
   }
+  body.todo-cargado {
+        opacity: 1;
+        visibility: visible;
+      }
 /* 2. El body: Maneja el FONDO GENERAL y el CENTRADO */
   body {
     background-color: #a4a4a4;
@@ -141,8 +145,45 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
     /* --- COMPORTAMIENTO DE SCROLL --- */
     /* Si la ventana del navegador es más pequeña que 1400x650px, aparecerán barras de scroll */
     overflow: hidden;
+    opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
   }
 
   
 
 </style>
+<script>
+      // 1. Efecto Fade-IN al cargar
+      window.addEventListener('load', () => {
+        document.body.classList.add('todo-cargado');
+      });
+
+      // 2. Efecto Fade-OUT súper robusto (HTML + SVG)
+      document.addEventListener('click', (evento) => {
+        const enlace = evento.target.closest('a');
+
+        if (!enlace) return;
+
+        // EXTRACCIÓN SEGURA: Leemos el atributo crudo (funciona igual en <a> de HTML y <a> de SVG)
+        const ruta = enlace.getAttribute('href') || enlace.getAttribute('xlink:href');
+        
+        // Si por alguna razón el enlace está vacío o es un ancla interna (#), no hacemos nada
+        if (!ruta || ruta.startsWith('#')) return;
+
+        // Convertimos la ruta en un objeto URL real basado en la dirección actual de tu página
+        const urlDestino = new URL(ruta, window.location.href);
+
+        // Validaciones: no secuestrar si tiene target="_blank" o si va a otra página web distinta
+        if (enlace.getAttribute('target') === '_blank' || urlDestino.host !== window.location.host) return;
+
+        // ¡Secuestramos el clic con éxito!
+        evento.preventDefault();
+        
+        document.body.classList.remove('todo-cargado');
+
+        setTimeout(() => {
+          window.location.href = urlDestino.href; // Usamos la URL limpia
+        }, 500); // 400ms de la animación
+      });
+    </script>

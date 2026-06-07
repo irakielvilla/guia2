@@ -31,9 +31,41 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
             <img src="/personajes/la.svg" alt="">
         </div>
 
+        <div class="botonp">
+                 <a class="botonpa" href="/indice/portadillaa">
+                    <img class="botonpimg" src="/portada/botonp.png" alt="Botón de Inicio">
+                </a>
+            </div>
+
     </div>
 
     <style>
+           .botonpa {
+        position: relative;
+        display: inline-block;
+        width: fit-content;
+    }
+    .botonpimg {
+        width: 70%;
+        position: relative;
+        rotate: 180deg;
+    }
+    .botonp {
+        /* padding-top: 15%;
+        padding-bottom: 80%;
+        
+        margin-right: 20%; */
+        margin-top: 6%;
+        margin-left: 22%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column: 2/5 !important;
+        grid-row: 2/5 !important;
+        width: 100%;
+        height: 100%;
+        z-index: 10 !important;
+    }
         .personaje {
             grid-column: 24/30;
             grid-row: 6/15;

@@ -11,7 +11,6 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
 		<title>Astro</title>
 	</head>
 	<body>
-    <body>
     <AlertaVertical />
 
     <div class="super-contenedor">
@@ -20,7 +19,6 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
 
     </div>
 </body>
-	</body>
 </html>
 
 <style>
@@ -117,6 +115,10 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
     margin: 0;
     padding: 0;
   }
+  body.todo-cargado {
+        opacity: 1;
+        visibility: visible;
+      }
 /* 2. El body: Maneja el FONDO GENERAL y el CENTRADO */
   body {
     background-color: #fce86c;
@@ -140,7 +142,11 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
     /* --- COMPORTAMIENTO DE SCROLL --- */
     /* Si la ventana del navegador es más pequeña que 1400x650px, aparecerán barras de scroll */
     overflow: hidden;
+     opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
   }
+   
 
   
 
@@ -157,6 +163,8 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
         const enlace = evento.target.closest('a');
 
         if (!enlace) return;
+
+        console.log("¡Hicieron clic en un enlace del Layout 2!"); // <--- AÑADE ESTO
 
         // EXTRACCIÓN SEGURA: Leemos el atributo crudo (funciona igual en <a> de HTML y <a> de SVG)
         const ruta = enlace.getAttribute('href') || enlace.getAttribute('xlink:href');
@@ -179,4 +187,4 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
           window.location.href = urlDestino.href; // Usamos la URL limpia
         }, 500); // 400ms de la animación
       });
-  </script>
+    </script>
