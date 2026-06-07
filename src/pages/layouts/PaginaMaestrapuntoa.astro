@@ -32,45 +32,34 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
     overflow: visible; 
 }
 
-/* =========================================
-   2. TUS REGLAS DE ZOOM (Responsive)
-   ========================================= */
-
-/* Para pantallas GIGANTES (hace Zoom In) */
-@media screen and (min-width: 1400px) {
-    :root { --zoom-factor: calc(100vw / 1400px); }
-    .super-contenedor {
-        transform: scale(var(--zoom-factor));
-        transform-origin: center center;
-        margin: 0 0 0 0;
-        overflow: visible;
-    }
+:root {
+    /* El navegador calcula la escala por ancho y por alto, y aplica SIEMPRE la menor. 
+       Así garantiza que nunca se desborde ni se corte, sin importar la pantalla. */
+    --zoom-factor: min(calc(100vw / 1400px), calc(100vh / 650px));
 }
 
-/* Para pantallas PEQUEÑAS (hace Zoom Out) */
-@media screen and (max-width: 1399px) {
-    :root { --zoom-factor-reduccion: calc(100vw / 1400px); }
-    .super-contenedor {
-        transform: scale(var(--zoom-factor-reduccion));
-        transform-origin: center center;
-        margin: 0 0 0 0;
-        overflow: visible;
-    }
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #0b0f19; /* Tu color de fondo actual */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Para pantallas BAJITAS (ajusta por el alto) */
-@media screen and (max-height: 650px) {
-    :root { --zoom-factor-alto: calc(100vh / 750px); }
-    .super-contenedor {
-        transform: scale(var(--zoom-factor-alto));
-        transform-origin: center top;
-        overflow: visible;
-        height: 100vh; /* Usamos alto dinámico */
-        margin-top: 5%;
-    }
-        
-        /* 'dvh' es 'dynamic viewport height', especial para Safari móvil */
-  }
+.super-contenedor {
+    width: 1400px;
+    height: 650px;
+    /* Aplicamos la escala perfecta dinámica */
+    transform: scale(var(--zoom-factor));
+    transform-origin: center center;
+    position: relative;
+    /* Opcional: outline border para debuggear si lo necesitas */
+    /* border: 2px solid red; */
+}
   /* --- FUENTE COINY --- */
   @font-face {
     font-family: 'Coiny';
