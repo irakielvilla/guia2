@@ -1,5 +1,7 @@
 ---
 import AlertaVertical from "../../components/AlertaVertical.astro"
+// 1. Capturamos la propiedad 'title' que nos enviará cada página
+const { title } = Astro.props;
 ---
 <html lang="es">
 	<head>
@@ -8,7 +10,7 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{title}</title>
 	</head>
 	<body>
     <AlertaVertical />

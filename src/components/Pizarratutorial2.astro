@@ -47,7 +47,9 @@ const paginas = pagKeys.map(key => {
 </div>
 
 <div id="fondoazulinfo"></div>
-
+{paginas.length > 0 && (
+      <img id="img-tutorial-dinamica" src={paginas[0].src} alt="Tutorial" />
+    )}
 
 
 <div id="contenedor-swiper-texto">
@@ -55,7 +57,7 @@ const paginas = pagKeys.map(key => {
     <div class="swiper-wrapper">
       {paginas.map((pag, index) => (
         <div class="swiper-slide" data-slide-image={pag.src}>
-          <img src={pag.src} alt={`Instrucción ${index + 1}`} class="img-tutorial-carrusel">
+          <img src={pag.src} alt={`Instrucción ${index + 1}`} class="img-tutorial-carrusel" />
         </div>
       ))}
     </div>
@@ -63,6 +65,7 @@ const paginas = pagKeys.map(key => {
     <div class="swiper-pagination"></div>
   </div>
 </div>
+
 <div id="navegadorpasos">
   <a id="arriba" class:list={['navegador-btn', posicionActual === 0 && 'is-disabled']} href={arribaUrl} title="Ir al paso anterior">
     <img class="arribab" src="/puntoa/arriba2.svg" alt="Arriba">
@@ -75,6 +78,9 @@ const paginas = pagKeys.map(key => {
 </div>
 
 <style is:global>
+  #img-tutorial-dinamica{
+    visibility: hidden;
+  }
   /* Cápsula Desactivada (Estado por defecto) */
   .mySwiperTutorial .swiper-pagination-bullet {
     background-color: transparent !important; /* Eliminamos el círculo gris nativo */
@@ -91,6 +97,7 @@ const paginas = pagKeys.map(key => {
     
     transition: all 0.3s ease !important;
     margin: 0 1.8% !important;
+    z-index: 10 !important;
   }
 
   /* Efecto Hover para las cápsulas */
@@ -165,22 +172,16 @@ const paginas = pagKeys.map(key => {
     border-radius: 20px;
   }
 
-
-
-  #img-tutorial-dinamica {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-    transition: opacity 0.2s ease-in-out; 
-  }
-
   #contenedor-swiper-texto {
     grid-row: 6/13;
-    grid-column: 11/22;
+    grid-column: 11/23;
     z-index: 5;
     box-sizing: border-box;
-    margin-top: 10%;
-    margin-right: 7%;
+    margin-top: 9.2%;
+    margin-right: 8%;
+    margin-left: 1%;
+
+
   }
 
   .swiper {
@@ -211,7 +212,7 @@ const paginas = pagKeys.map(key => {
     bottom: 17% !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-    z-index: 10;
+    z-index: 10 !important;
     display: flex;
     justify-content: flex-start;
   }
@@ -250,7 +251,7 @@ const paginas = pagKeys.map(key => {
     transition: calc(0.2s);
     opacity: 0.3;
   }
-  // Efecto hover para hacer que la flecha crezca un poco al pasar el mouse
+
   .arribab:hover {
     transform: scale(1.1);
   }

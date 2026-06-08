@@ -8,7 +8,6 @@ import Barraizquierda from "../../../components/barraizquierda.astro";
 // Importamos el JSON (como en tu foto)
 import tablatutorial from "../../../../tablatutorial.json";
 import PaginaMaestrapuntoa from "../../layouts/PaginaMaestrapuntoa.astro";
-import Pizarratutorial from "../../../components/Pizarratutorial.astro";
 import Pizarratutorial1 from "../../../components/Pizarratutorial1.astro";
 
 // Buscamos el ejercicio que coincida con esta página
@@ -19,7 +18,7 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
     Astro.props;
 ---
 
-<PaginaMaestrapuntoa>
+<PaginaMaestrapuntoa title="Punto de Partida - Paso4">
     <div id="ContenedorPrin">
         <!--inicio chorrera de codigo -->
         <Barraizquierda section="paso4" />
