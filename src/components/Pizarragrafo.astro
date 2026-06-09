@@ -69,7 +69,7 @@ if (!miejercicio) {
   }
 
   #pizarracomp {
-    background-color: #F49898;
+    background-color: #D59AD8;
     grid-column: 7/26;
     grid-row: 5/14;
     z-index: 3;
@@ -82,31 +82,26 @@ if (!miejercicio) {
   }
 
   video {
-      overflow: hidden;
-    height: 101%;
-    width: 101%;
-    /* LA CLAVE: Evita que Flexbox lo aplaste hacia adentro */
-  flex-shrink: 0; 
-  
-  /* Mantiene la proporción sin deformar la imagen y recorta el exceso (ideal si el video trae bandas negras de origen) */
-  object-fit: cover;
+    overflow: hidden;
+    object-fit: fill;
+    height: 100%;
   }
 
   #contenedor-info {
     grid-row: 6/13;
     grid-column: 7/13;
-    background-color: #D63838;
+    background-color: #7C439F;
     z-index: 5;
     padding-top: 40px;
     border-radius: 0px 54px 54px 0px;
-    margin: 15% 13% 15% 14.81%;
-    border-top: 5.9px solid #910F0F;
-    border-right: 5.9px solid #910F0F;
-    border-bottom: 5.9px solid #910F0F;
+    margin: 15% 13% 15% 15%;
+    border-top: 5.9px solid #512573;
+    border-right: 5.9px solid #512573;
+    border-bottom: 5.9px solid #512573;
   }
   #contenedor-info p {
     font-family: "Fredoka", sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     color: #ffffff;
     text-align: center;
     padding-left: 12%;
@@ -156,12 +151,10 @@ if (!miejercicio) {
 
   .reprod {
     width: 100%;
-    transition: transform 0.3s ease;
   }
 
   .reprod:hover {
     transform: scale(1.25);
-    transition: transform 0.3s ease;
   }
 
   #decorepro {

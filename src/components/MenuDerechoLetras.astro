@@ -1,0 +1,226 @@
+---
+
+// Componente: MenuDerechoNumeros.astro
+const { currentNumber, miejercicio } = Astro.props;
+
+// 1. Limpieza a prueba de balas: Extraemos solo el número al final del string
+// Si recibe "letras1-1", match extraerá "1". Si recibe "letras1-10", extraerá "10".
+const stringCrudo = String(currentNumber || miejercicio?.id || '');
+const numeroExtraido = stringCrudo.match(/\d+$/);
+const integerNumber = numeroExtraido ? parseInt(numeroExtraido[0], 10) : 0;
+
+// 2. Astro decide qué bloque mostrar primero según el número de la página
+// Corregimos el rango: El Grupo 1 ahora contiene los números del 1 al 5
+const paginaInicialMenu = (integerNumber >= 1 && integerNumber <= 5) ? 1 : 2;
+// 🔔 ALARMAS DE ASTRO (Se ven en la terminal)
+console.log("-----------------------------------------");
+console.log("🚨 ALARMA 1: Prop currentNumber:", currentNumber);
+console.log("🚨 ALARMA 2: Prop miejercicio?.id:", miejercicio?.id);
+console.log("🚨 ALARMA 3: stringCrudo evaluado:", stringCrudo);
+console.log("🚨 ALARMA 4: integerNumber final:", integerNumber);
+
+console.log("🚨 ALARMA 5: paginaInicialMenu calculada:", paginaInicialMenu);
+console.log("-----------------------------------------");
+
+
+---
+
+<div id="barraderecha" class="menu-interactivo-numeros" data-pagina-inicial={paginaInicialMenu}>
+  
+  <button id="btn-arriba" class="btn-flecha" title="Ver números anteriores">
+    <img src="/barraderecha/arribadere.svg" alt="Flecha Arriba" />
+  </button>
+
+  <div id="grupo-numeros-1" class="bloque-numeros">
+    <a href="/c-grafomotriz/letras1/letras1-1/" class="btn-numero">
+      <img id="numero1" src={integerNumber === 1 ? "/barraderecha/11si.svg" : "/barraderecha/1l.svg"} alt="Número 0"/>
+    </a>
+    <a  href="/c-grafomotriz/letras1/letras1-2/" class="btn-numero">
+      <img  src={integerNumber === 2 ? "/barraderecha/12si.svg" : "/barraderecha/2l.svg"} alt="Número 1" />
+    </a>
+    <a href="/c-grafomotriz/letras1/letras1-3/" class="btn-numero">
+      <img src={integerNumber === 3 ? "/barraderecha/13si.svg" : "/barraderecha/3l.svg"} alt="Número 2" />
+    </a>
+    <a href="/c-grafomotriz/letras1/letras1-4/" class="btn-numero">
+      <img src={integerNumber === 4 ? "/barraderecha/4lsi.svg" : "/barraderecha/4l.svg"} alt="Número 3" />
+    </a>
+    <a href="/c-grafomotriz/letras1/letras1-5/" class="btn-numero">
+      <img src={integerNumber === 5 ? "/barraderecha/5lsi.svg" : "/barraderecha/5l.svg"} alt="Número 4" />
+    </a>
+  </div>
+
+  <div id="grupo-numeros-2" class="bloque-numeros oculto">
+    <a href="/c-grafomotriz/letras1/letras1-6/" class="btn-numero">
+      <img src={integerNumber === 6 ? "/barraderecha/6lsi.svg" : "/barraderecha/6l.svg"} alt="Número 5" />
+    </a>
+    <a href="/c-grafomotriz/letras1/letras1-7/" class="btn-numero">
+      <img src={integerNumber === 7 ? "/barraderecha/7lsi.svg" : "/barraderecha/7l.svg"} alt="Número 6" />
+    </a>
+    <a href="/c-grafomotriz/letras1/letras1-8/" class="btn-numero">
+      <img src={integerNumber === 8 ? "/barraderecha/8lsi.svg" : "/barraderecha/8l.svg"} alt="Número 7" />
+    </a>
+    <a href="/c-grafomotriz/letras1/letras1-9/" class="btn-numero">
+      <img src={integerNumber === 9 ? "/barraderecha/9lsi.svg" : "/barraderecha/9l.svg"} alt="Número 8" />
+    </a>
+    <a href="/c-grafomotriz/letras1/letras1-10/" class="btn-numero">
+      <img id="numero10" src={integerNumber === 10 ? "/barraderecha/10lsi.svg" : "/barraderecha/10l.svg"} alt="Número 9" />
+    </a>
+  </div>
+
+  <button id="btn-abajo" class="btn-flecha" title="Ver siguientes números">
+    <img src="/barraderecha/abajodere.svg" alt="Flecha Abajo" />
+  </button>
+
+</div>
+
+<style>
+  #btn-arriba{
+    margin-bottom: -30%;
+    width: 60%;
+  }
+  #btn-abajo{
+    width: 60%;
+  }
+
+  #numero1{
+    height: 80% !important; 
+  }
+
+  #numero10{
+    width: 150% !important; 
+  }
+  /* Contenedor principal que se alinea con tu Grid */
+  .menu-interactivo-numeros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between !important;
+    gap: 0px; /* Espacio entre flechas y números */
+    width: 100%;
+    height: 100%;
+    grid-column: 26/31;
+    grid-row: 5/15;
+  }
+
+  /* Estilos para limpiar los botones nativos y hacerlos interactivos */
+  .btn-flecha {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .btn-flecha img {
+    width: 22%; /* Ajusta el tamaño de tus flechas aquí */
+    height: auto;
+  }
+
+  /* 🚀 LA MAGIA: Clase que desactiva la flecha cuando topamos el límite */
+  .desactivado {
+    opacity: 0.3; /* Se vuelve semitransparente */
+    pointer-events: none; /* Bloquea el clic */
+    cursor: default;
+  }
+
+  /* Estilos para los bloques de números */
+  .bloque-numeros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15.5%; /* Espacio entre cada número */
+    width: 100%;
+    position: relative; /* Para posicionar las flechas dentro del bloque */
+    bottom: 8%;
+  }
+
+  /* Clase para ocultar el bloque que no se está viendo */
+  .oculto {
+    display: none;
+  }
+
+  .btn-numero {
+    display: block;
+    width: 22.5%; /* Ajusta según lo ancho que quieras los números */
+    transition: transform 0.2s ease;
+    padding-right: 7%;
+
+  }
+
+  .btn-numero img {
+    width: 120%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Efecto sutil al pasar el mouse por encima de los números */
+  .btn-numero:hover, .btn-flecha:hover:not(.desactivado) {
+    transform: scale(1.25);
+  }
+</style>
+
+<script>
+  const inicializarMenuDerecho = () => {
+    console.log("🚀 ALARMA CLIENTE 1: Inicializando script de menú derecho...");
+    
+    const menuContainer = document.querySelector('.menu-interactivo-numeros');
+    if (!menuContainer) {
+        console.error("❌ ERROR CRÍTICO: No se encontró el contenedor principal (.menu-interactivo-numeros)");
+        return;
+    }
+
+    const paginaInicial = parseInt(menuContainer.getAttribute('data-pagina-inicial') || '1', 10);
+    console.log("🚀 ALARMA CLIENTE 2: data-pagina-inicial leído en HTML:", paginaInicial);
+
+    const btnArriba = document.getElementById('btn-arriba');
+    const btnAbajo = document.getElementById('btn-abajo');
+    const grupo1 = document.getElementById('grupo-numeros-1');
+    const grupo2 = document.getElementById('grupo-numeros-2');
+
+    if (!btnArriba || !btnAbajo || !grupo1 || !grupo2) {
+        console.error("❌ ERROR CRÍTICO: Falta algún botón o grupo en el HTML.", {
+            btnArriba: !!btnArriba, 
+            btnAbajo: !!btnAbajo, 
+            grupo1: !!grupo1, 
+            grupo2: !!grupo2
+        });
+        return;
+    }
+
+    let paginaActualMenu = paginaInicial;
+
+    const actualizarVistaMenu = () => {
+      console.log("🔄 Actualizando vista a la página del menú:", paginaActualMenu);
+      if (paginaActualMenu === 1) {
+        grupo1.classList.remove('oculto');
+        grupo2.classList.add('oculto');
+        btnArriba.classList.add('desactivado');
+        btnAbajo.classList.remove('desactivado');
+      } else {
+        grupo1.classList.add('oculto');
+        grupo2.classList.remove('oculto');
+        btnArriba.classList.remove('desactivado');
+        btnAbajo.classList.add('desactivado');
+      }
+    };
+
+    actualizarVistaMenu();
+
+    btnArriba.addEventListener('click', () => {
+      if (paginaActualMenu === 2) {
+        paginaActualMenu = 1;
+        actualizarVistaMenu();
+      }
+    });
+
+    btnAbajo.addEventListener('click', () => {
+      if (paginaActualMenu === 1) {
+        paginaActualMenu = 2;
+        actualizarVistaMenu();
+      }
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", inicializarMenuDerecho);
+  document.addEventListener("astro:page-load", inicializarMenuDerecho);
+</script>

@@ -2,7 +2,6 @@
 import AlertaVertical from "../../components/AlertaVertical.astro"
 const { title } = Astro.props;
 ---
----
 <html lang="es">
 	<head>
 		<meta charset="utf-8" />
@@ -25,7 +24,7 @@ const { title } = Astro.props;
 	</body>
 </html>
 
-<style>
+<style is:global>
   .super-contenedor {
     width: 1400px;
     /* 2. ¡CAMBIAMOS LA CHINCHETA! */

@@ -1,1 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.4 21.45"><defs><style>.cls-1{fill:#c91111;}</style></defs><title>arribadere</title><g id="Layer_2" data-name="Layer 2"><g id="botones"><path class="cls-1" d="M6.41,1,.28,11.66a2.06,2.06,0,0,0,1.78,3.09H14.33a2.06,2.06,0,0,0,1.79-3.09L10,1A2.06,2.06,0,0,0,6.41,1Z"/><rect class="cls-1" x="3.61" y="13.47" width="9.17" height="6.79" rx="1.89" transform="matrix(0, -1, 1, 0, -8.67, 25.06)"/></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16.4 21.5" style="enable-background:new 0 0 16.4 21.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#7C439F;}
+</style>
+<title>arribadere</title>
+<g id="Layer_2_1_">
+	<g id="botones">
+		<path class="st0" d="M6.4,1L0.3,11.7c-0.6,1-0.2,2.2,0.8,2.8c0.3,0.2,0.7,0.3,1,0.3h12.3c1.1,0,2.1-0.9,2.1-2.1
+			c0-0.4-0.1-0.7-0.3-1L10,1C9.4,0,8.2-0.3,7.2,0.2C6.9,0.4,6.6,0.7,6.4,1z"/>
+		<path class="st0" d="M4.8,19.6v-5.4c0-1,0.8-1.9,1.9-1.9h3c1,0,1.9,0.8,1.9,1.9v5.4c0,1-0.8,1.9-1.9,1.9h-3
+			C5.6,21.4,4.8,20.6,4.8,19.6z"/>
+	</g>
+</g>
+</svg>

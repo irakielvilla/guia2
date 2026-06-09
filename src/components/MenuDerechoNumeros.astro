@@ -1,13 +1,18 @@
 ---
-// Componente: MenuDerechoNumeros.astro
-const { currentNumber } = Astro.props;
-const integerNumber = parseInt(currentNumber, 10);
+// Componente: MenuDerechoNumeros.astro (Números 0 al 19)
+const { currentNumber, miejercicio } = Astro.props;
 
-// Astro decide qué bloque mostrar primero según el número de la página
-const paginaInicialMenu = (integerNumber >= 0 && integerNumber <= 4) ? 1 : 2;
-const { miejercicio } = Astro.props;
+// 1. Limpieza a prueba de balas: Extraemos solo el número al final del string
+// Busca en currentNumber, o en miejercicio.id, y extrae limpiamente el número (Ej: de "numeros2-10" saca 10).
+const stringCrudo = String(currentNumber || miejercicio?.id || '');
+const numeroExtraido = stringCrudo.match(/\d+$/);
+const integerNumber = numeroExtraido ? parseInt(numeroExtraido[0], 10) : 0;
 
-
+// 2. Astro decide qué bloque mostrar primero según el número de la página
+let paginaInicialMenu = 1; // Por defecto Grupo 1 (0 al 4)
+if (integerNumber >= 5 && integerNumber <= 9) paginaInicialMenu = 2;
+if (integerNumber >= 10 && integerNumber <= 14) paginaInicialMenu = 3;
+if (integerNumber >= 15 && integerNumber <= 19) paginaInicialMenu = 4;
 ---
 
 <div id="barraderecha" class="menu-interactivo-numeros" data-pagina-inicial={paginaInicialMenu}>
@@ -17,38 +22,74 @@ const { miejercicio } = Astro.props;
   </button>
 
   <div id="grupo-numeros-1" class="bloque-numeros">
-    <a href="/c-grafomotriz/numeros/numeros3-0/" class="btn-numero">
+    <a href="/c-grafomotriz/numeros2/numeros2-10/" class="btn-numero">
       <img src={integerNumber === 0 ? "/barraderecha/cerosin.svg" : "/barraderecha/ceron.svg"} alt="Número 0"/>
     </a>
-    <a id="numero1" href="/c-grafomotriz/numeros/numeros3-1/" class="btn-numero">
-      <img class="numerito1" src={integerNumber === 1 ? "/barraderecha/1sin.svg" : "/barraderecha/1n.svg"} alt="Número 1" />
+    <a href="/c-grafomotriz/numeros2/numeros2-11/" class="btn-numero">
+      <img id="numero11" src={integerNumber === 1 ? "/barraderecha/1sin.svg" : "/barraderecha/1n.svg"} alt="Número 1" />
     </a>
-    <a href="/c-grafomotriz/numeros/numeros3-2/" class="btn-numero">
+    <a href="/c-grafomotriz/numeros2/numeros2-12/" class="btn-numero">
       <img src={integerNumber === 2 ? "/barraderecha/2sin.svg" : "/barraderecha/2n.svg"} alt="Número 2" />
     </a>
-    <a href="/c-grafomotriz/numeros/numeros3-3/" class="btn-numero">
+    <a href="/c-grafomotriz/numeros2/numeros2-13/" class="btn-numero">
       <img src={integerNumber === 3 ? "/barraderecha/3sin.svg" : "/barraderecha/3n.svg"} alt="Número 3" />
     </a>
-    <a href="/c-grafomotriz/numeros/numeros3-4/" class="btn-numero">
+    <a href="/c-grafomotriz/numeros2/numeros2-14/" class="btn-numero">
       <img src={integerNumber === 4 ? "/barraderecha/4sin.svg" : "/barraderecha/4n.svg"} alt="Número 4" />
     </a>
   </div>
 
   <div id="grupo-numeros-2" class="bloque-numeros oculto">
-    <a href="/c-grafomotriz/numeros/numeros3-5/" class="btn-numero">
+    <a href="/c-grafomotriz/numeros2/numeros2-15/" class="btn-numero">
       <img src={integerNumber === 5 ? "/barraderecha/5sin.svg" : "/barraderecha/5n.svg"} alt="Número 5" />
     </a>
-    <a href="/c-grafomotriz/numeros/numeros3-6/" class="btn-numero">
+    <a href="/c-grafomotriz/numeros2/numeros2-16/" class="btn-numero">
       <img src={integerNumber === 6 ? "/barraderecha/6sin.svg" : "/barraderecha/6n.svg"} alt="Número 6" />
     </a>
-    <a href="/c-grafomotriz/numeros/numeros3-7/" class="btn-numero">
+    <a href="/c-grafomotriz/numeros2/numeros2-17/" class="btn-numero">
       <img src={integerNumber === 7 ? "/barraderecha/7sin.svg" : "/barraderecha/7n.svg"} alt="Número 7" />
     </a>
-    <a href="/c-grafomotriz/numeros/numeros3-8/" class="btn-numero">
+    <a href="/c-grafomotriz/numeros2/numeros2-18/" class="btn-numero">
       <img src={integerNumber === 8 ? "/barraderecha/8sin.svg" : "/barraderecha/8n.svg"} alt="Número 8" />
     </a>
-    <a href="/c-grafomotriz/numeros/numeros3-9/" class="btn-numero">
+    <a href="/c-grafomotriz/numeros2/numeros2-19/" class="btn-numero">
       <img src={integerNumber === 9 ? "/barraderecha/9sin.svg" : "/barraderecha/9n.svg"} alt="Número 9" />
+    </a>
+  </div>
+
+  <div id="grupo-numeros-3" class="bloque-numeros oculto">
+    <a href="/c-grafomotriz/numeros2/numeros2-20/" class="btn-numero">
+      <img src={integerNumber === 10 ? "/barraderecha/10sin.svg" : "/barraderecha/10n.svg"} alt="Número 10"/>
+    </a>
+    <a href="/c-grafomotriz/numeros2/numeros2-21/" class="btn-numero">
+      <img src={integerNumber === 11 ? "/barraderecha/11sin.svg" : "/barraderecha/11n.svg"} alt="Número 11"/>
+    </a>
+    <a href="/c-grafomotriz/numeros2/numeros2-22/" class="btn-numero">
+      <img src={integerNumber === 12 ? "/barraderecha/12sin.svg" : "/barraderecha/12n.svg"} alt="Número 12"/>
+    </a>
+    <a href="/c-grafomotriz/numeros2/numeros2-23/" class="btn-numero">
+      <img src={integerNumber === 13 ? "/barraderecha/13sin.svg" : "/barraderecha/13n.svg"} alt="Número 13"/>
+    </a>
+    <a href="/c-grafomotriz/numeros2/numeros2-24/" class="btn-numero">
+      <img src={integerNumber === 14 ? "/barraderecha/14sin.svg" : "/barraderecha/14n.svg"} alt="Número 14"/>
+    </a>
+  </div>
+
+  <div id="grupo-numeros-4" class="bloque-numeros oculto">
+    <a href="/c-grafomotriz/numeros2/numeros2-25/" class="btn-numero">
+      <img src={integerNumber === 15 ? "/barraderecha/15sin.svg" : "/barraderecha/15n.svg"} alt="Número 15"/>
+    </a>
+    <a href="/c-grafomotriz/numeros2/numeros2-26/" class="btn-numero">
+      <img src={integerNumber === 16 ? "/barraderecha/16sin.svg" : "/barraderecha/16n.svg"} alt="Número 16"/>
+    </a>
+    <a href="/c-grafomotriz/numeros2/numeros2-27/" class="btn-numero">
+      <img src={integerNumber === 17 ? "/barraderecha/17sin.svg" : "/barraderecha/17n.svg"} alt="Número 17"/>
+    </a>
+    <a href="/c-grafomotriz/numeros2/numeros2-28/" class="btn-numero">
+      <img src={integerNumber === 18 ? "/barraderecha/18sin.svg" : "/barraderecha/18n.svg"} alt="Número 18"/>
+    </a>
+    <a href="/c-grafomotriz/numeros2/numeros2-29/" class="btn-numero">
+      <img src={integerNumber === 19 ? "/barraderecha/19sin.svg" : "/barraderecha/19n.svg"} alt="Número 19"/>
     </a>
   </div>
 
@@ -59,6 +100,29 @@ const { miejercicio } = Astro.props;
 </div>
 
 <style>
+  #grupo-numeros-4 .btn-numero img {
+    width: 101% !important; 
+  }
+   #grupo-numeros-1{
+    position: relative;
+    top: -4.5% !important;
+    gap: 10% !important;
+  }
+  #grupo-numeros-2{
+    position: relative;
+    top: -4.5% !important;
+    gap: 10% !important;
+  }
+  #grupo-numeros-3{
+    position: relative;
+    top: -4.5% !important;
+    gap: 11% !important;
+  }
+  #grupo-numeros-4{
+    position: relative;
+    top: -4.5% !important;
+    gap: 11% !important;
+  }
   #btn-arriba{
     margin-bottom: -30%;
     width: 60%;
@@ -72,8 +136,8 @@ const { miejercicio } = Astro.props;
     height: 100% !important;
   }
 
-  #numero1{
-    height: 20% !important; 
+  #numero11{
+    height: 80% !important; 
   }
   /* Contenedor principal que se alinea con tu Grid */
   .menu-interactivo-numeros {
@@ -114,8 +178,10 @@ const { miejercicio } = Astro.props;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6.6%; /* Espacio entre cada número */
+    gap: 2%; /* Espacio entre cada número */
     width: 100%;
+    position: relative;
+    top: 6%; /* Ajusta este valor para centrar verticalmente los números */
   }
 
   /* Clase para ocultar el bloque que no se está viendo */
@@ -125,7 +191,7 @@ const { miejercicio } = Astro.props;
 
   .btn-numero {
     display: block;
-    width: 18%; /* Ajusta según lo ancho que quieras los números */
+    width: 28%; /* Ajusta según lo ancho que quieras los números */
     transition: transform 0.2s ease;
   }
 
@@ -143,56 +209,73 @@ const { miejercicio } = Astro.props;
 
 <script>
   const inicializarMenuDerecho = () => {
-    const menuContainer = document.querySelector('.menu-interactivo-numeros');
-    if (!menuContainer) return;
+    const contenedor = document.getElementById('barraderecha');
+    if (!contenedor) return;
 
-    const paginaInicial = parseInt(menuContainer.getAttribute('data-pagina-inicial') || '1', 10);
+    let paginaInicial = parseInt(contenedor.dataset.paginaInicial, 10);
+    // SALVAVIDAS: Si el número de página inicial falla o no está entre 1 y 4, forzar la 1
+    if (isNaN(paginaInicial) || paginaInicial < 1 || paginaInicial > 4) {
+      paginaInicial = 1;
+    }
 
     const btnArriba = document.getElementById('btn-arriba');
     const btnAbajo = document.getElementById('btn-abajo');
+    
     const grupo1 = document.getElementById('grupo-numeros-1');
     const grupo2 = document.getElementById('grupo-numeros-2');
-
-    if (!btnArriba || !btnAbajo || !grupo1 || !grupo2) return;
+    const grupo3 = document.getElementById('grupo-numeros-3');
+    const grupo4 = document.getElementById('grupo-numeros-4');
 
     let paginaActualMenu = paginaInicial;
 
-    // Función que actualiza lo que se ve en pantalla
     const actualizarVistaMenu = () => {
-      if (paginaActualMenu === 1) {
+      // Ocultar de forma segura únicamente los elementos que existan en el DOM
+      if (grupo1) grupo1.classList.add('oculto');
+      if (grupo2) grupo2.classList.add('oculto');
+      if (grupo3) grupo3.classList.add('oculto');
+      if (grupo4) grupo4.classList.add('oculto');
+
+      if (btnArriba) btnArriba.classList.remove('desactivado');
+      if (btnAbajo) btnAbajo.classList.remove('desactivado');
+
+      // Mostrar grupo activo dependiendo de la página
+      if (paginaActualMenu === 1 && grupo1) {
         grupo1.classList.remove('oculto');
-        grupo2.classList.add('oculto');
-        
-        btnArriba.classList.add('desactivado'); // Bloqueamos ir más arriba del 0
-        btnAbajo.classList.remove('desactivado'); // Permitimos bajar al 5-9
-      } else {
-        grupo1.classList.add('oculto');
+        if (btnArriba) btnArriba.classList.add('desactivado');
+      } else if (paginaActualMenu === 2 && grupo2) {
         grupo2.classList.remove('oculto');
-        
-        btnArriba.classList.remove('desactivado'); // Permitimos subir al 0-4
-        btnAbajo.classList.add('desactivado'); // Bloqueamos ir más abajo del 9
+      } else if (paginaActualMenu === 3 && grupo3) {
+        grupo3.classList.remove('oculto');
+      } else if (paginaActualMenu === 4 && grupo4) {
+        grupo4.classList.remove('oculto');
+        if (btnAbajo) btnAbajo.classList.add('desactivado');
       }
     };
 
-    // Ejecutamos la lógica al cargar la página
+    // Ejecutar renderizado inicial seguro
     actualizarVistaMenu();
 
-    // Eventos de clic que NO recargan la página, solo cambian las imágenes
-    btnArriba.addEventListener('click', () => {
-      if (paginaActualMenu === 2) {
-        paginaActualMenu = 1;
-        actualizarVistaMenu();
-      }
-    });
+    // Eventos de click utilizando funciones directas para no duplicar escuchadores con Astro View Transitions
+    if (btnArriba) {
+      btnArriba.onclick = () => {
+        if (paginaActualMenu > 1) {
+          paginaActualMenu--;
+          actualizarVistaMenu();
+        }
+      };
+    }
 
-    btnAbajo.addEventListener('click', () => {
-      if (paginaActualMenu === 1) {
-        paginaActualMenu = 2;
-        actualizarVistaMenu();
-      }
-    });
+    if (btnAbajo) {
+      btnAbajo.onclick = () => {
+        if (paginaActualMenu < 4) {
+          paginaActualMenu++;
+          actualizarVistaMenu();
+        }
+      };
+    }
   };
 
-  document.addEventListener("DOMContentLoaded", inicializarMenuDerecho);
-  document.addEventListener("astro:page-load", inicializarMenuDerecho);
+  // Eventos para asegurar que el script se cargue bien en Astro
+  document.addEventListener('DOMContentLoaded', inicializarMenuDerecho);
+  document.addEventListener('astro:page-load', inicializarMenuDerecho);
 </script>

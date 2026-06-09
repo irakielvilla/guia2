@@ -1,11 +1,13 @@
 ---
-import PaginaMaestra1 from "../layouts/PaginaMaestra1.astro"
+import PaginaMaestrapuntoc from "../layouts/PaginaMaestrapuntoc.astro";
+
+
 ---
-<PaginaMaestra1 title="Contraportada">
+<PaginaMaestrapuntoc title="Contraportada">
     <div id="ContenedorPrin"> 
 
         <div class="personajes">
-            <a class="nivel2" href="https://trazoaventuras2.vercel.app">
+            <a class="nivel2" href="https://trazoaventuras1.vercel.app">
                 <img class="nivel12img" src="/portada/nivel2.svg" alt="Nivel 2">
             </a>
             <a class="nivel3" href="/c-grafomotriz/numeros/numeros3-9/">
@@ -22,7 +24,7 @@ import PaginaMaestra1 from "../layouts/PaginaMaestra1.astro"
 
         <div class="botonp">
                  <a class="botonpa" href="/c-grafomotriz/numeros/numeros3-9/">
-                    <img class="botonpimg" src="/portada/botonp.png" alt="Botón de Inicio">
+                    <img class="botonpimg" src="/portada/botonpamarillo.png" alt="Botón de Inicio">
                 </a>
             </div>
         
@@ -47,6 +49,10 @@ import PaginaMaestra1 from "../layouts/PaginaMaestra1.astro"
 
     .nivel2 {
         width: 43%;
+        position: relative;
+        top: -20%;
+        right: -4%;
+        
     }
     .nivel12img {
         transition: transform 0.3s ease;
@@ -117,7 +123,7 @@ import PaginaMaestra1 from "../layouts/PaginaMaestra1.astro"
         align-items: flex-start;
     }
     .pizarrafinal img {
-       height: 101%;
+       height: 105.6%;
        padding-bottom: 3.2%;
        position: relative;
          left: -2.5%;
@@ -138,7 +144,7 @@ import PaginaMaestra1 from "../layouts/PaginaMaestra1.astro"
     margin: 0;
     padding: 0;
     /* --- CONFIGURACIÓN DE LA IMAGEN DE FONDO --- */
-    background-image: url('/bg/fondoazul.svg'); 
+    background-image: url('/bg/fondorojo.svg'); 
     /* Asegura que la imagen cubra toda la pantalla sin repetirse y esté centrada */
     background-size: cover;
     background-position: center;
@@ -172,9 +178,10 @@ import PaginaMaestra1 from "../layouts/PaginaMaestra1.astro"
 
             /* Opcional: para visualizar la retícula durante el diseño */
             /* outline: 1px solid red; 
-    background-image: 
+    background-image: s
         linear-gradient(to right, rgba(0,0,0,0.1) 41.12px, transparent 5.74px),
         linear-gradient(to bottom, rgba(0,0,0,0.1) 41.12px, transparent 5.74px);
     background-size: calc(41.12px + 5.74px) calc(41.12px + 5.74px); */
         }
-        </PaginaMaestra1>
+</style>
+        </PaginaMaestrapuntoc>

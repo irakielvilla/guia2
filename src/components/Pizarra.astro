@@ -19,7 +19,7 @@ if (!miejercicio) {
 ---
 
 <div id="pizarrabase">
-  <img class="esquinas" src="/esquinas.svg" alt="" />
+  <img class="esquinas" src="/esquinas.png" alt="" />
 </div>
 
 <div id="Pestanatitulo">
@@ -68,7 +68,7 @@ if (!miejercicio) {
   }
 
   #pizarracomp {
-    background-color: #83d3ff;
+    background-color: #94dd8e;
     grid-column: 7/26;
     grid-row: 5/14;
     z-index: 3;
@@ -82,33 +82,26 @@ if (!miejercicio) {
 
   video {
     overflow: hidden;
-    height: 101%;
-    width: 101%;
-    /* LA CLAVE: Evita que Flexbox lo aplaste hacia adentro */
-  flex-shrink: 0; 
-  
-  /* Mantiene la proporción sin deformar la imagen y recorta el exceso (ideal si el video trae bandas negras de origen) */
-  object-fit: cover;
   }
 
   #contenedor-info {
     grid-row: 6/13;
     grid-column: 7/13;
-    background-color: #188ae3;
+    background-color: #2DA323;
     z-index: 5;
     padding-top: 40px;
     border-radius: 0px 54px 54px 0px;
-    margin: 15% 13% 15% 14.8%;
-    border-top: 5.9px solid #0468ad;
-    border-right: 5.9px solid #0468ad;
-    border-bottom: 5.9px solid #0468ad;
+    margin: 15% 13% 15% 15%;
+    border-top: 5.9px solid #23841A;
+    border-right: 5.9px solid #23841A;
+    border-bottom: 5.9px solid #23841A;
   }
   #contenedor-info p {
     font-family: "Fredoka", sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     color: #ffffff;
     text-align: center;
-    padding-left: 11%;
+    padding-left: 12%;
     padding-right: 10.4%;
     font-size: 95%;
     letter-spacing: -0.1%;
@@ -117,7 +110,6 @@ if (!miejercicio) {
   }
 
   #pizarrabase {
-    
     border-radius: 50px;
     grid-column: 6/27;
     grid-row: 4/15;
@@ -157,12 +149,10 @@ if (!miejercicio) {
 
   .reprod {
     width: 100%;
-    transition: transform 0.3s ease;
   }
 
   .reprod:hover {
     transform: scale(1.25);
-    transition: transform 0.3s ease;
   }
 
   #decorepro {

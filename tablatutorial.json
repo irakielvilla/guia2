@@ -10,7 +10,11 @@
     {
         "id": "paso1",
         "pag1": "/carrusel/pag11.svg",
-        "imgpag1":"/puntoa/paso1img1.svg",
+        "pag2":"/carrusel/pag12.svg",
+        "pag3":"/carrusel/pag13.svg",
+        "imgpag1": "/puntoa/paso1img1.svg",
+        "imgpag2": "/puntoa/paso1img1.svg",
+        "imgpag3": "/puntoa/paso1img1.svg",
         "titulo": "/puntoa/t1.svg"
     },
     {
@@ -34,11 +38,9 @@
         "pag1": "/carrusel/pag41.svg",
         "pag2": "/carrusel/pag42.svg",
         "pag3": "/carrusel/pag43.svg",
-        "pag4": "/carrusel/pag44.svg",
         "titulo": "/puntoa/t4.svg",
         "imgpag1": "/puntoa/paso4img1.svg",
         "imgpag2": "/puntoa/paso4img2.svg",
-        "imgpag3": "/puntoa/paso4img3.svg",
-        "imgpag4": "/puntoa/paso4img4.svg"
+        "imgpag3": "/puntoa/paso4img3.svg"
     }
 ]
