@@ -10,11 +10,7 @@
     {
         "id": "paso1",
         "pag1": "/carrusel/pag11.svg",
-        "pag2":"/carrusel/pag12.svg",
-        "pag3":"/carrusel/pag13.svg",
         "imgpag1": "/puntoa/paso1img1.svg",
-        "imgpag2": "/puntoa/paso1img1.svg",
-        "imgpag3": "/puntoa/paso1img1.svg",
         "titulo": "/puntoa/t1.svg"
     },
     {
