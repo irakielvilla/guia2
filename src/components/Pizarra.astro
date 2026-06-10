@@ -82,6 +82,13 @@ if (!miejercicio) {
 
   video {
     overflow: hidden;
+    height: 101%;
+    width: 101%;
+    /* LA CLAVE: Evita que Flexbox lo aplaste hacia adentro */
+  flex-shrink: 0; 
+  
+  /* Mantiene la proporción sin deformar la imagen y recorta el exceso (ideal si el video trae bandas negras de origen) */
+  object-fit: cover;
   }
 
   #contenedor-info {
