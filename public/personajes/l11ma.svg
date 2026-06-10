@@ -1,1 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264.13 314.87"><defs><style>.cls-1,.cls-2{fill:#fff;stroke:#000;stroke-miterlimit:10;}.cls-1{stroke-width:0.94px;}.cls-2{stroke-width:1.01px;}.cls-3{fill:none;}</style></defs><title>L11ma</title><g id="Layer_2" data-name="Layer 2"><g id="dedos"><ellipse class="cls-1" cx="8.57" cy="165.97" rx="8.1" ry="10.21"/><ellipse class="cls-1" cx="53.22" cy="166.57" rx="8.1" ry="10.21"/><path class="cls-2" d="M38.72,156.27c4.15,7.78,4,26.86-9.16,26.1s-11.13-19.72-6.11-27c2.28-3.3,5.41-4.78,7.92-4.63S36.83,152.73,38.72,156.27Z"/><ellipse class="cls-1" cx="255.56" cy="171.52" rx="8.1" ry="10.21"/><ellipse class="cls-1" cx="210.91" cy="172.12" rx="8.1" ry="10.21"/><path class="cls-2" d="M225.41,161.82c-4.15,7.79-4,26.86,9.16,26.1s11.13-19.72,6.11-27c-2.28-3.3-5.41-4.77-7.93-4.63S227.3,158.28,225.41,161.82Z"/><rect class="cls-3" width="264.13" height="314.87"/></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 315.1 314.9" style="enable-background:new 0 0 315.1 314.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#000000;stroke-width:0.94;stroke-miterlimit:10;}
+	.st1{fill:#FFFFFF;stroke:#000000;stroke-width:1.01;stroke-miterlimit:10;}
+	.st2{fill:none;}
+</style>
+<title>L11ma</title>
+<g id="Layer_2_1_">
+	<g id="dedos">
+		<ellipse class="st0" cx="10.2" cy="166" rx="8.1" ry="10.2"/>
+		<ellipse class="st0" cx="54.9" cy="166.6" rx="8.1" ry="10.2"/>
+		<path class="st1" d="M40.4,156.3c4.2,7.8,4,26.9-9.2,26.1s-11.1-19.7-6.1-27c2.3-3.3,5.4-4.8,7.9-4.6
+			C35.6,150.9,38.5,152.7,40.4,156.3z"/>
+		<g>
+			<ellipse class="st0" cx="302.8" cy="171.5" rx="8.1" ry="10.2"/>
+			<ellipse class="st0" cx="258.1" cy="172.1" rx="8.1" ry="10.2"/>
+			<path class="st1" d="M272.6,161.8c-4.1,7.8-4,26.9,9.2,26.1s11.1-19.7,6.1-27c-2.3-3.3-5.4-4.8-7.9-4.6S274.5,158.3,272.6,161.8z
+				"/>
+		</g>
+		<rect x="24.9" class="st2" width="264.1" height="314.9"/>
+	</g>
+</g>
+</svg>

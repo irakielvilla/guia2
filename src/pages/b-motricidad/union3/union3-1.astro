@@ -47,7 +47,7 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
             </a>
         </div>
         <div class="personaje">
-            <img src="/personajes/l13.svg" alt="">
+            <img src="/personajes/l12.svg" alt="">
         </div>  
     </div>
 
@@ -60,11 +60,15 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-right: 24%;
+            pointer-events: none;
+          
         }
-        .personaje img {
-            object-fit: contain;
-            height: 97%;
+            .personaje img {
+            height: 70%;
+              position: relative;
+            top: 8%;
+            right: 10%;
+            
         }
         #ContenedorPrin {
             display: grid;

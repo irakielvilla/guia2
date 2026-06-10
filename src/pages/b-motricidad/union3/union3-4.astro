@@ -46,25 +46,44 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
                 ><img class="ejers" src={miejercicio.bdere4} alt="" />
             </a>
         </div>
-        <div class="personaje">
-            <img src="/personajes/l13.svg" alt="">
+        
+       <div class="personaje">
+            <img id="perso" src="/personajes/l11.svg" alt="">
+            <img class="manos" src="/personajes/l11ma.svg" alt="">
+           
         </div>  
-    </div>
 
     <style>
         .personaje {
-            grid-column: 2/6;
-            grid-row: 2/6;
+            grid-column: 12/16;
+            grid-row: 2/7;
             width: 100%;
-            z-index: 5;
+            padding-right: 5%;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-right: 24%;
+            position: relative;
+            padding-right: 100;
+            pointer-events: none;
+            
         }
         .personaje img {
-            object-fit: contain;
-            height: 97%;
+            padding-top: 13.5%;
+            height: 90%;
+            position: absolute;
+            transform: scaleX(-1);
+        }
+
+        #perso {
+            z-index: 1;
+            right: 28%;
+            bottom: -7.5%;
+        }
+        .manos {
+            z-index: 5 !important;
+            position: absolute;
+            bottom: -4%;
+            right: 1%;
+            
+
         }
         #ContenedorPrin {
             display: grid;

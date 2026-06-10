@@ -48,25 +48,42 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
             
         </div>
         <div class="personaje">
-            <img src="/personajes/l12.svg" alt="">
+            <img id="perso" src="/personajes/l11.svg" alt="">
+            <img class="manos" src="/personajes/l11ma.svg" alt="">
+           
         </div>  
         
     </div>
 
     <style>
         .personaje {
-            grid-column: 2/6;
-            grid-row: 2/6;
+            grid-column: 12/16;
+            grid-row: 2/7;
             width: 100%;
-            z-index: 5;
+            padding-right: 5%;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-right: 14%;
+            position: relative;
+            padding-right: 100;
+
         }
         .personaje img {
-            object-fit: contain;
-            height: 97%;
+            padding-top: 13.5%;
+            height: 90%;
+            position: absolute;
+        }
+
+        #perso {
+            z-index: 1;
+            right: 28%;
+            bottom: -7.5%;
+        }
+        .manos {
+            z-index: 5 !important;
+            position: absolute;
+            bottom: -4%;
+            right: 1%;
+            
+
         }
 
         
