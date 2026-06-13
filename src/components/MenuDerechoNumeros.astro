@@ -11,7 +11,7 @@ const integerNumber = numeroExtraido ? parseInt(numeroExtraido[0], 10) : 0;
 
 // 2. Astro decide qué bloque mostrar primero según el número de la página
 // Corregimos el rango: El Grupo 1 ahora contiene los números del 1 al 5
-const paginaInicialMenu = (integerNumber >= 1 && integerNumber <= 5) ? 1 : 2;
+const paginaInicialMenu = (integerNumber >= 0 && integerNumber <= 4) ? 1 : 2;
 // 🔔 ALARMAS DE ASTRO (Se ven en la terminal)
 console.log("-----------------------------------------");
 console.log("🚨 ALARMA 1: Prop currentNumber:", currentNumber);
@@ -33,37 +33,37 @@ console.log("-----------------------------------------");
 
   <div id="grupo-numeros-1" class="bloque-numeros">
    <a href="/c-grafomotriz/numeros2/numeros2-10/" class="btn-numero">
-      <img id="numero1" src={integerNumber === 1 ? "/barraderecha/cerosin.svg" : "/barraderecha/ceron.svg"} alt="Número 0"/>
+      <img id="numero1" src={integerNumber === 0 ? "/barraderecha/cerosin.svg" : "/barraderecha/ceron.svg"} alt="Número 0"/>
     </a>
     <a href="/c-grafomotriz/numeros2/numeros2-11/" class="btn-numero">
-      <img  src={integerNumber === 2 ? "/barraderecha/1sin.svg" : "/barraderecha/1n.svg"} alt="Número 1" />
+      <img  src={integerNumber === 1 ? "/barraderecha/1sin.svg" : "/barraderecha/1n.svg"} alt="Número 1" />
     </a>
     <a href="/c-grafomotriz/numeros2/numeros2-12/" class="btn-numero">
-      <img src={integerNumber === 3 ? "/barraderecha/2sin.svg" : "/barraderecha/2n.svg"} alt="Número 2" />
+      <img src={integerNumber === 2 ? "/barraderecha/2sin.svg" : "/barraderecha/2n.svg"} alt="Número 2" />
     </a>
     <a href="/c-grafomotriz/numeros2/numeros2-13/" class="btn-numero">
-      <img src={integerNumber === 4 ? "/barraderecha/3sin.svg" : "/barraderecha/3n.svg"} alt="Número 3" />
+      <img src={integerNumber === 3 ? "/barraderecha/3sin.svg" : "/barraderecha/3n.svg"} alt="Número 3" />
     </a>
     <a href="/c-grafomotriz/numeros2/numeros2-14/" class="btn-numero">
-      <img src={integerNumber === 5 ? "/barraderecha/4sin.svg" : "/barraderecha/4n.svg"} alt="Número 4" />
+      <img src={integerNumber === 4 ? "/barraderecha/4sin.svg" : "/barraderecha/4n.svg"} alt="Número 4" />
     </a>
   </div>
 
   <div id="grupo-numeros-2" class="bloque-numeros oculto">
     <a href="/c-grafomotriz/numeros2/numeros2-15/" class="btn-numero">
-      <img src={integerNumber === 6 ? "/barraderecha/5sin.svg" : "/barraderecha/5n.svg"} alt="Número 5" />
+      <img src={integerNumber === 5 ? "/barraderecha/5sin.svg" : "/barraderecha/5n.svg"} alt="Número 5" />
     </a>
     <a href="/c-grafomotriz/numeros2/numeros2-16/" class="btn-numero">
-      <img src={integerNumber === 7 ? "/barraderecha/6sin.svg" : "/barraderecha/6n.svg"} alt="Número 6" />
+      <img src={integerNumber === 6 ? "/barraderecha/6sin.svg" : "/barraderecha/6n.svg"} alt="Número 6" />
     </a>
     <a href="/c-grafomotriz/numeros2/numeros2-17/" class="btn-numero">
-      <img src={integerNumber === 8 ? "/barraderecha/7sin.svg" : "/barraderecha/7n.svg"} alt="Número 7" />
+      <img src={integerNumber === 7 ? "/barraderecha/7sin.svg" : "/barraderecha/7n.svg"} alt="Número 7" />
     </a>
     <a href="/c-grafomotriz/numeros2/numeros2-18/" class="btn-numero">
-      <img src={integerNumber === 9 ? "/barraderecha/8sin.svg" : "/barraderecha/8n.svg"} alt="Número 8" />
+      <img src={integerNumber === 8 ? "/barraderecha/8sin.svg" : "/barraderecha/8n.svg"} alt="Número 8" />
     </a>
     <a href="/c-grafomotriz/numeros2/numeros2-19/" class="btn-numero">
-      <img id="numero10" src={integerNumber === 10 ? "/barraderecha/9sin.svg" : "/barraderecha/9n.svg"} alt="Número 9" />
+      <img id="numero10" src={integerNumber === 9 ? "/barraderecha/9sin.svg" : "/barraderecha/9n.svg"} alt="Número 9" />
     </a>
   </div>
 

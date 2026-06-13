@@ -26,7 +26,6 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4, bdere5 } =
         <Barraizquierda section="vocales" />
         <!--fin chorrera de codigo -->
 
-
         <Pizarragrafo miejercicio={miejercicio} />
 
         <div id="barraderecha">
@@ -40,6 +39,10 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4, bdere5 } =
     </div>
 
     <style>
+         :global(.botonpimg:hover){
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
+    }
         .personaje {
             grid-column: 3/7;
             grid-row: 11/15;
