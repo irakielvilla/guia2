@@ -163,7 +163,7 @@
         "id": "trazos1-1",
         "titulo": "/titulos/11tt.svg",
         "video": "/videos/11vt.webm",
-        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra m grande y pequeña.",
+        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra m grande<br>y pequeña.",
         "bdere1": "/barraderecha/11si.svg",
         "bdere2": "/barraderecha/2l.svg",
         "bdere3": "/barraderecha/3l.svg",
@@ -173,7 +173,7 @@
         "id": "trazos1-2",
         "titulo": "/titulos/12tt.svg",
         "video": "/videos/12vt.webm",
-        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra p grande y pequeña.",
+        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra p grande<br> y pequeña.",
         "bdere1": "/barraderecha/11t.svg",
         "bdere2": "/barraderecha/12si.svg",
         "bdere3": "/barraderecha/13l.svg",
@@ -183,7 +183,7 @@
         "id": "trazos1-3",
         "titulo": "/titulos/13tt.svg",
         "video": "/videos/13vt.webm",
-        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra l grande y pequeña.",
+        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra l grande<br> y pequeña.",
         "bdere1": "/barraderecha/11t.svg",
         "bdere2": "/barraderecha/12t.svg",
         "bdere3": "/barraderecha/13si.svg",
@@ -193,38 +193,38 @@
         "id": "trazos1-4",
         "titulo": "/titulos/14tt.svg",
         "video": "/videos/14vt.webm",
-        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra s grande y pequeña."
+        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra s grande<br> y pequeña."
     },
      {
         "id": "trazos1-5",
         "titulo": "/titulos/15tt.svg",
         "video": "/videos/15vt.webm",
-        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra t grande y pequeña."
+        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra t grande<br> y pequeña."
     }, {
         "id": "trazos1-6",
         "titulo": "/titulos/16tt.svg",
         "video": "/videos/16vt.webm",
-        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra n grande y pequeña."
+        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra n grande<br> y pequeña."
     }, {
         "id": "trazos1-7",
         "titulo": "/titulos/17tt.svg",
         "video": "/videos/17vt.webm",
-        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra d grande y pequeña."
+        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra d grande<br> y pequeña."
     }, {
         "id": "trazos1-8",
         "titulo": "/titulos/18tt.svg",
         "video": "/videos/18vt.webm",
-        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra f grande y pequeña."
+        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra f grande<br> y pequeña."
     }, {
         "id": "trazos1-9",
         "titulo": "/titulos/19tt.svg",
         "video": "/videos/19vt.webm",
-        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra c grande y pequeña."
+        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra c grande<br> y pequeña."
     }, {
         "id": "trazos1-10",
         "titulo": "/titulos/20tt.svg",
         "video": "/videos/20vt.webm",
-        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra b grande y pequeña."
+        "instruccion": "Sigue el recorrido<br>del lápiz junto a las flechas para formar la letra b grande<br> y pequeña."
     },
     {
         "id": "vocales2-0",
